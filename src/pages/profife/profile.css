@@ -1,0 +1,61 @@
+.profile {
+    width: 100%;
+    display: flex;
+}
+
+.profileContainer {
+    flex: 6;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.formProfile {
+    height: 100%;
+  
+}
+
+.pictureavatar {
+    width: 40%;
+}
+
+.labelprofile {
+    margin-top: 15px;
+    color: rgb(33, 114, 229);
+    font-weight: 500;
+}
+
+.inpprofile {
+    width: 600px;
+    padding: 7px;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.passwordContainer {
+    margin-bottom: 20px;
+}
+
+.inpbtn {
+    padding: 12px;
+    color: white;
+    border: none;
+    background-color: rgb(33, 114, 229);
+}
+
+.inpbtn:hover {
+    background-color: wheat;
+}
+
+.inpbtn:active {
+    background-color: gray;
+}
+
+.chooseavatar {
+    margin-top: 5px;
+    padding: 6px;
+    color: white;
+    border: none;
+    background-color: rgb(33, 114, 229);
+}

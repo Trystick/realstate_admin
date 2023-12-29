@@ -1,0 +1,23 @@
+.selectpostweek {
+    display: flex;
+}
+
+.select-container {
+    width: 200px;
+    margin: 20px;
+}
+
+.select-container select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+    font-size: 16px;
+    color: #333;
+}
+
+.select-container select:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+}
