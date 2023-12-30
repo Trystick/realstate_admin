@@ -21,7 +21,7 @@ const NewJobCategory = () => {
         ...info
       };
 
-      await axios.post("/jobCategory/", newJobCategory);
+      await axios.post("https://realstate-api-glm4.onrender.com/api/jobCategory/", newJobCategory);
 
       alert('Thêm thành công!');
       // Quay lại trang trước

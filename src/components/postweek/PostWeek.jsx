@@ -8,7 +8,7 @@ const PostWeek = () => {
     const [year, setYear] = useState((new Date()).getFullYear());
 
     useEffect(() => {
-        fetch(`landSale/weekly-land-sale-lease/${year}/${month}`)
+        fetch(`https://realstate-api-glm4.onrender.com/api/landSale/weekly-land-sale-lease/${year}/${month}`)
         .then(response => response.json())
         .then(data => setData(data))
         .catch(error => console.error(error));

@@ -14,14 +14,14 @@ const EditJob = () => {
   // const [filed, setFiled] = useState("");
   const [info, setInfo] = useState({})
   const {jobId} = useParams();
-  const {data, loading, error} = useFetch(`/job/find/${jobId}`);
+  const {data, loading, error} = useFetch(`https://realstate-api-glm4.onrender.com/api/job/find/${jobId}`);
   console.log(data);
   const [jobCategories, setJobCategories] = useState([]);
 
   useEffect(() => {
     const fetchJobCategories = async () => {
       try {
-        const response = await axios.get('/jobCategory');
+        const response = await axios.get('https://realstate-api-glm4.onrender.com/api/jobCategory');
         setJobCategories(response.data);
       } catch (error) {
         // Xử lý lỗi
@@ -57,7 +57,7 @@ const EditJob = () => {
         // photos: list,
       };
 
-      await axios.put(`/job/${jobId}`, updateJob);
+      await axios.put(`https://realstate-api-glm4.onrender.com/api/job/${jobId}`, updateJob);
 
       alert('Sửa thành công!');
       // Quay lại trang trước

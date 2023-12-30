@@ -13,7 +13,7 @@ const EditPacketType = () => {
   const ref = useRef(null);
   const [info, setInfo] = useState({})
   const {packetTypeId} = useParams();
-  const {data, loading, error} = useFetch(`/packetType/${packetTypeId}`);
+  const {data, loading, error} = useFetch(`https://realstate-api-glm4.onrender.com/api/packetType/${packetTypeId}`);
  
   const navigate = useNavigate();
   
@@ -32,7 +32,7 @@ const EditPacketType = () => {
         ...info,
       };
 
-      await axios.put(`/packetType/${packetTypeId}`, newUser);
+      await axios.put(`https://realstate-api-glm4.onrender.com/api/packetType/${packetTypeId}`, newUser);
 
       alert('Sửa thành công!');
       // Quay lại trang trước

@@ -8,7 +8,7 @@ const CancelReasonChart = () => {
     const [data, setData] = useState([]);
     
     useEffect(() => {
-        fetch('/order/cancelReason')
+        fetch('https://realstate-api-glm4.onrender.com/api/order/cancelReason')
         .then(response => response.json())
         .then(data => setData(data))
         .catch(error => console.error(error));

@@ -14,7 +14,7 @@ const Assign = () => {
    useEffect(() => {
     const fetchData = async () => {
         try {
-            const response = await axios.get(`/role/${assignId}`);
+            const response = await axios.get(`https://realstate-api-glm4.onrender.com/api/role/${assignId}`);
             setRole(response.data);
             setModules(response.data.modules);
         } catch (error) {
@@ -41,7 +41,7 @@ const Assign = () => {
         event.preventDefault();
     
         try {
-            const response = await axios.post('/role/assign', { role: role.name, modules });
+            const response = await axios.post('https://realstate-api-glm4.onrender.com/api/role/assign', { role: role.name, modules });
             alert('Role assigned successfully!');
             navigate(-1);
         } catch (error) {

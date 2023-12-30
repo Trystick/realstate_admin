@@ -14,11 +14,11 @@ const Datatable = ({columns}) => {
   const path = location.pathname.split("/")[1];
   let apiPath;
   if (path === 'users') {
-    apiPath = '/users/users/users';
+    apiPath = 'https://realstate-api-glm4.onrender.com/api/users/users/users';
   } else if (path === 'admins')
-    apiPath = '/users/admins/admins';
+    apiPath = 'https://realstate-api-glm4.onrender.com/api/users/admins/admins';
   else {
-    apiPath = `/${path}`;
+    apiPath = `https://realstate-api-glm4.onrender.com/api/${path}`;
   }
   const {data, loading, error} = useFetch(apiPath)
   const [list, setList] = useState([]);
@@ -52,10 +52,10 @@ const Datatable = ({columns}) => {
     }  
     let apiPath;
     if (path === 'admins') {
-      apiPath = 'users';
+      apiPath = 'https://realstate-api-glm4.onrender.com/api/users';
     } 
     else {
-      apiPath = `/${path}`;
+      apiPath = `https://realstate-api-glm4.onrender.com/api/${path}`;
     }
 
     try {
@@ -103,7 +103,7 @@ const Datatable = ({columns}) => {
 
   const handleApprove = async (id) => {
     try {
-      const response = await axios.post(`/comment/approve/${id}`);
+      const response = await axios.post(`https://realstate-api-glm4.onrender.com/api/comment/approve/${id}`);
       if (response.status === 200) {
         alert('Bình luận đã được đăng thành công');
         setActionStatus('success');
@@ -116,7 +116,7 @@ const Datatable = ({columns}) => {
 
   const handleApproveLandSale = async (id) => {
     try {
-      const response = await axios.post(`/landSale/approve/${id}`);
+      const response = await axios.post(`https://realstate-api-glm4.onrender.com/api/landSale/approve/${id}`);
       if (response.status === 200) {
         alert('Nhà bán đã được đăng thành công');
         setActionStatus('success');
@@ -129,7 +129,7 @@ const Datatable = ({columns}) => {
 
   const handleApproveLandLease = async (id) => {
     try {
-      const response = await axios.post(`/landLease/approve/${id}`);
+      const response = await axios.post(`https://realstate-api-glm4.onrender.com/api/landLease/approve/${id}`);
       if (response.status === 200) {
         alert('Nhà thuê đã được đăng thành công');
         setActionStatus('success');

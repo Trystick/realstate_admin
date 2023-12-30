@@ -12,13 +12,13 @@ const DownSide = ({ type }) => {
       let url;
       switch (type) {
         case "like":
-          url = '/like';
+          url = 'https://realstate-api-glm4.onrender.com/api/like';
           break;
         case "favorite":
-          url = '/favorite';
+          url = 'https://realstate-api-glm4.onrender.com/api/favorite';
           break;
         case "comment":
-          url = '/comment';
+          url = 'https://realstate-api-glm4.onrender.com/api/comment';
           break;
         default:
           break;

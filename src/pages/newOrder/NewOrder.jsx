@@ -14,7 +14,7 @@ const NewOrder = () => {
   const [categoryName, setCategoryName] = useState(undefined);
   const [selectedPacketAmount, setSelectedPacketAmount] = useState('');
   const navigate = useNavigate();
-  const {data, loading, error} = useFetch("/packet")
+  const {data, loading, error} = useFetch("https://realstate-api-glm4.onrender.com/api/packet")
   
   const handleChange = (e) => {
     setInfo((prev) => ({...prev, [e.target.id]: e.target.value}));
@@ -43,7 +43,7 @@ const NewOrder = () => {
     const user = JSON.parse(userJson);
     if (user && user._id) {
         const userId = user._id;
-        axios.get(`/users/${userId}`, {withCredentials: true})
+        axios.get(`https://realstate-api-glm4.onrender.com/api/users/${userId}`, {withCredentials: true})
         .then(response => {
             setUserLocal(response.data);
             localStorage.setItem('userId', response.data._id);
@@ -69,7 +69,7 @@ const NewOrder = () => {
         packetName: categoryName,
         amount: selectedPacketAmount,
       };
-       await axios.post(`/order`, newProject);
+       await axios.post(`https://realstate-api-glm4.onrender.com/api/order`, newProject);
       
        alert('Thêm thành công!');
       // Quay lại trang trước

@@ -14,14 +14,14 @@ const EditProject = () => {
   const [filed, setFiled] = useState("");
   const [info, setInfo] = useState({})
   const {projectId} = useParams();
-  const {data, loading, error} = useFetch(`/project/find/${projectId}`);
+  const {data, loading, error} = useFetch(`https://realstate-api-glm4.onrender.com/api/project/find/${projectId}`);
 
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get('/category');
+        const response = await axios.get('https://realstate-api-glm4.onrender.com/api/category');
         setCategories(response.data);
       } catch (error) {
         // Xử lý lỗi
@@ -57,7 +57,7 @@ const EditProject = () => {
         photos: list,
       };
 
-      await axios.put(`/project/${projectId}`, updateProject);
+      await axios.put(`https://realstate-api-glm4.onrender.com/api/project/${projectId}`, updateProject);
 
       alert('Sửa thành công!');
       // Quay lại trang trước

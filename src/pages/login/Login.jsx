@@ -25,7 +25,7 @@ const Login = () => {
     useEffect(() => {
         const fetchAdminRoles = async () => {
             try {
-                const response = await axios.get('/role');
+                const response = await axios.get('https://realstate-api-glm4.onrender.com/api/role');
                 setAdminRoles(response.data.map(role => role.name));
             } catch (error) {
                 console.error('Failed to fetch admin roles:', error);
@@ -47,7 +47,7 @@ const Login = () => {
 
     dispatch({type:"LOGIN_START"})
     try {
-        const res = await axios.post("/auth/login", credentials)
+        const res = await axios.post("https://realstate-api-glm4.onrender.com/api/auth/login", credentials)
         if (res.data.error) {
             if (res.data.error === 'Invalid username') {
                 alert('Tên đăng nhập không hợp lệ!');

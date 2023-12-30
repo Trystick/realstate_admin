@@ -12,7 +12,7 @@ const EditPayment = () => {
   const ref = useRef(null);
   const [info, setInfo] = useState({})
   const {paymentId} = useParams();
-  const {data, loading, error} = useFetch(`/payment/find/${paymentId}`);
+  const {data, loading, error} = useFetch(`https://realstate-api-glm4.onrender.com/api/payment/find/${paymentId}`);
 
   const [categories, setCategories] = useState([]);
   const [packetName, setPacketName] = useState('');
@@ -20,7 +20,7 @@ const EditPayment = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get('/order');
+        const response = await axios.get('https://realstate-api-glm4.onrender.com/api/order');
         setCategories(response.data);
       } catch (error) {
         // Xử lý lỗi
@@ -48,7 +48,7 @@ const EditPayment = () => {
     const user = JSON.parse(userJson);
     if (user && user._id) {
         const userId = user._id;
-        axios.get(`/users/${userId}`, {withCredentials: true})
+        axios.get(`https://realstate-api-glm4.onrender.com/api/users/${userId}`, {withCredentials: true})
         .then(response => {
             setUserLocal(response.data);
             localStorage.setItem('userId', response.data._id);
@@ -71,7 +71,7 @@ const EditPayment = () => {
         packetName: packetName,
       };
 
-      await axios.put(`/payment/${paymentId}`, updateProject);
+      await axios.put(`https://realstate-api-glm4.onrender.com/api/payment/${paymentId}`, updateProject);
 
       alert('Sửa thành công!');
       // Quay lại trang trước

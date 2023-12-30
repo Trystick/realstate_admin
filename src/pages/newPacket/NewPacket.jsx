@@ -11,7 +11,7 @@ const NewPacket = () => {
   const [info, setInfo] = useState({});
   const [jobCategoryId, setJobCategoryId] = useState(undefined);
   const navigate = useNavigate();
-  const {data, loading, error} = useFetch("/packetType")
+  const {data, loading, error} = useFetch("https://realstate-api-glm4.onrender.com/api/packetType")
   
   const handleChange = (e) => {
     setInfo((prev) => ({...prev, [e.target.id]: e.target.value}));
@@ -32,7 +32,7 @@ const NewPacket = () => {
         ...info,
         packetTypeId: jobCategoryId,
       };
-       await axios.post(`/packet/${jobCategoryId}`, newJob);
+       await axios.post(`https://realstate-api-glm4.onrender.com/api/packet/${jobCategoryId}`, newJob);
       
        alert('Thêm thành công!');
       // Quay lại trang trước

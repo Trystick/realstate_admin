@@ -13,7 +13,7 @@ const EditJobCategory = () => {
   const ref = useRef(null);
   const [info, setInfo] = useState({})
   const {jobCategoryId} = useParams();
-  const {data, loading, error} = useFetch(`/jobCategory/${jobCategoryId}`);
+  const {data, loading, error} = useFetch(`https://realstate-api-glm4.onrender.com/api/jobCategory/${jobCategoryId}`);
  
   const navigate = useNavigate();
   
@@ -30,7 +30,7 @@ const EditJobCategory = () => {
         ...info,
       };
 
-      await axios.put(`/jobCategory/${jobCategoryId}`, editJobCategory);
+      await axios.put(`https://realstate-api-glm4.onrender.com/api/jobCategory/${jobCategoryId}`, editJobCategory);
 
       alert('Sửa thành công!');
       // Quay lại trang trước

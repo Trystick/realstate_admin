@@ -48,7 +48,7 @@ const Sidebar = () => {
   useEffect(() => {
     const fetchRoles = async () => {
       try {
-        const response = await axios.get('/role');
+        const response = await axios.get('https://realstate-api-glm4.onrender.com/api/role');
         setRoles(response.data);
       } catch (error) {
         console.error('Error fetching roles', error);

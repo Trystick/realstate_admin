@@ -12,7 +12,7 @@ const NewJob = () => {
   const [info, setInfo] = useState({});
   const [jobCategoryId, setJobCategoryId] = useState(undefined);
   const navigate = useNavigate();
-  const {data, loading, error} = useFetch("/jobCategory")
+  const {data, loading, error} = useFetch("https://realstate-api-glm4.onrender.com/api/jobCategory")
   
   const handleChange = (e) => {
     setInfo((prev) => ({...prev, [e.target.id]: e.target.value}));
@@ -30,7 +30,7 @@ const NewJob = () => {
         ...info,
         jobCategoryId: jobCategoryId,
       };
-       await axios.post(`/job/${jobCategoryId}`, newJob);
+       await axios.post(`https://realstate-api-glm4.onrender.com/api/job/${jobCategoryId}`, newJob);
       
        alert('Thêm thành công!');
       // Quay lại trang trước

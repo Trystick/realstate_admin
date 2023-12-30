@@ -14,13 +14,13 @@ const EditPacket = () => {
   // const [filed, setFiled] = useState("");
   const [info, setInfo] = useState({})
   const {packetId} = useParams();
-  const {data, loading, error} = useFetch(`/packet/find/${packetId}`);
+  const {data, loading, error} = useFetch(`https://realstate-api-glm4.onrender.com/api/packet/find/${packetId}`);
   const [jobCategories, setJobCategories] = useState([]);
 
   useEffect(() => {
     const fetchJobCategories = async () => {
       try {
-        const response = await axios.get('/packetType');
+        const response = await axios.get('https://realstate-api-glm4.onrender.com/api/packetType');
         setJobCategories(response.data);
       } catch (error) {
         // Xử lý lỗi
@@ -45,7 +45,7 @@ const EditPacket = () => {
         ...info, 
       };
 
-      await axios.put(`/packet/${packetId}`, updateJob);
+      await axios.put(`https://realstate-api-glm4.onrender.com/api/packet/${packetId}`, updateJob);
 
       alert('Sửa thành công!');
       // Quay lại trang trước

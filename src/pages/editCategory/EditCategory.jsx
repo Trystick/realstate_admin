@@ -13,7 +13,7 @@ const EditCategory = () => {
   const ref = useRef(null);
   const [info, setInfo] = useState({})
   const {categoryId} = useParams();
-  const {data, loading, error} = useFetch(`/category/${categoryId}`);
+  const {data, loading, error} = useFetch(`https://realstate-api-glm4.onrender.com/api/category/${categoryId}`);
  
   const navigate = useNavigate();
   
@@ -32,7 +32,7 @@ const EditCategory = () => {
         ...info,
       };
 
-      await axios.put(`/category/${categoryId}`, newUser);
+      await axios.put(`https://realstate-api-glm4.onrender.com/api/category/${categoryId}`, newUser);
 
       alert('Sửa thành công!');
       // Quay lại trang trước

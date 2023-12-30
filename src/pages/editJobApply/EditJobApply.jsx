@@ -14,7 +14,7 @@ const EditJobApply = () => {
   const ref = useRef(null);
   const [info, setInfo] = useState({})
   const {jobApplyId} = useParams();
-  const {data, loading, error} = useFetch(`/jobApply/${jobApplyId}`);
+  const {data, loading, error} = useFetch(`https://realstate-api-glm4.onrender.com/api/jobApply/${jobApplyId}`);
  
   const navigate = useNavigate();
   
@@ -40,7 +40,7 @@ const EditJobApply = () => {
         file: url,
       };
 
-      await axios.put(`/jobApply/${jobApplyId}`, newJobApply);
+      await axios.put(`https://realstate-api-glm4.onrender.com/api/jobApply/${jobApplyId}`, newJobApply);
 
       alert('Sửa thành công!');
       // Quay lại trang trước

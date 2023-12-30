@@ -13,7 +13,7 @@ const NewProject = () => {
   const [info, setInfo] = useState({});
   const [categoryId, setCategoryId] = useState(undefined);
   const navigate = useNavigate();
-  const {data, loading, error} = useFetch("/category")
+  const {data, loading, error} = useFetch("https://realstate-api-glm4.onrender.com/api/category")
   
   const handleChange = (e) => {
     setInfo((prev) => ({...prev, [e.target.id]: e.target.value}));
@@ -43,7 +43,7 @@ const NewProject = () => {
         categoryId: categoryId,
         photos: list,
       };
-       await axios.post(`/project/${categoryId}`, newProject);
+       await axios.post(`https://realstate-api-glm4.onrender.com/api/project/${categoryId}`, newProject);
       
        alert('Thêm thành công!');
       // Quay lại trang trước

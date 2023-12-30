@@ -14,14 +14,14 @@ const EditPost = () => {
   const [filed, setFiled] = useState("");
   const [info, setInfo] = useState({})
   const {postId} = useParams();
-  const {data, loading, error} = useFetch(`/post/find/${postId}`);
+  const {data, loading, error} = useFetch(`https://realstate-api-glm4.onrender.com/api/post/find/${postId}`);
 
   const [postCategories, setPostCategories] = useState([]);
 
   useEffect(() => {
     const fetchPostCategories = async () => {
       try {
-        const response = await axios.get('/postCategory');
+        const response = await axios.get('https://realstate-api-glm4.onrender.com/api/postCategory');
         setPostCategories(response.data);
       } catch (error) {
         // Xử lý lỗi
@@ -59,7 +59,7 @@ const EditPost = () => {
         photos: list,
       };
 
-      await axios.put(`/post/${postId}`, updatePost);
+      await axios.put(`https://realstate-api-glm4.onrender.com/api/post/${postId}`, updatePost);
 
       alert('Sửa thành công!');
       // Quay lại trang trước

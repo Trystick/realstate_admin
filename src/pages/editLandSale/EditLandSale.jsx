@@ -14,14 +14,14 @@ const EditLandSale = () => {
   const [filed, setFiled] = useState("");
   const [info, setInfo] = useState({})
   const {landSaleId} = useParams();
-  const {data, loading, error} = useFetch(`/landSale/find/${landSaleId}`);
+  const {data, loading, error} = useFetch(`https://realstate-api-glm4.onrender.com/api/landSale/find/${landSaleId}`);
 
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get('/landSaleCategory');
+        const response = await axios.get('https://realstate-api-glm4.onrender.com/api/landSaleCategory');
         setCategories(response.data);
       } catch (error) {
         // Xử lý lỗi
@@ -37,7 +37,7 @@ const EditLandSale = () => {
     const user = JSON.parse(userJson);
     if (user && user._id) {
         const userId = user._id;
-        axios.get(`/users/${userId}`, {withCredentials: true})
+        axios.get(`https://realstate-api-glm4.onrender.com/api/users/${userId}`, {withCredentials: true})
         .then(response => {
             setUserLocal(response.data);
             localStorage.setItem('userId', response.data._id);
@@ -76,7 +76,7 @@ const EditLandSale = () => {
         photos: list,
       };
 
-      await axios.put(`/landSale/${landSaleId}`, updateProject);
+      await axios.put(`https://realstate-api-glm4.onrender.com/api/landSale/${landSaleId}`, updateProject);
 
       alert('Sửa thành công!');
       // Quay lại trang trước

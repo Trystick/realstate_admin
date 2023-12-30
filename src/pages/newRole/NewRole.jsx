@@ -21,7 +21,7 @@ const NewRole = () => {
         ...info
       };
 
-      await axios.post("/role/", newPostCategory);
+      await axios.post("https://realstate-api-glm4.onrender.com/api/role/", newPostCategory);
 
       alert('Thêm thành công!');
       navigate(-1);

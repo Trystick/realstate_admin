@@ -14,16 +14,16 @@ const Widget = ({ type }) => {
     let url;
     switch (type) {
       case "user":
-        url = '/users/users/users';
+        url = 'https://realstate-api-glm4.onrender.com/api/users/users/users';
         break;
       case "order":
-        url = '/order';
+        url = 'https://realstate-api-glm4.onrender.com/api/order';
         break;
       case "earning":
-        url = '/order';
+        url = 'https://realstate-api-glm4.onrender.com/api/order';
         break;
       case "balance":
-        url = ['/landSale', '/landLease'];
+        url = ['https://realstate-api-glm4.onrender.com/api/landSale', 'https://realstate-api-glm4.onrender.com/api/landLease'];
         break;
       default:
         break;

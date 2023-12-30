@@ -13,7 +13,7 @@ const NewPost = () => {
   const [info, setInfo] = useState({});
   const [postCategoryId, setPostCategoryId] = useState(undefined);
   const navigate = useNavigate();
-  const {data, loading, error} = useFetch("/postCategory")
+  const {data, loading, error} = useFetch("https://realstate-api-glm4.onrender.com/api/postCategory")
   
   const handleChange = (e) => {
     setInfo((prev) => ({...prev, [e.target.id]: e.target.value}));
@@ -43,7 +43,7 @@ const NewPost = () => {
         postCategoryId: postCategoryId,
         photos: list,
       };
-       await axios.post(`/post/${postCategoryId}`, newPost);
+       await axios.post(`https://realstate-api-glm4.onrender.com/api/post/${postCategoryId}`, newPost);
       
        alert('Thêm thành công!');
       // Quay lại trang trước

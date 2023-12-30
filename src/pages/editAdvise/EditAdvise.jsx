@@ -13,7 +13,7 @@ const EditAdvise = () => {
   const ref = useRef(null);
   const [info, setInfo] = useState({})
   const {adviseId} = useParams();
-  const {data, loading, error} = useFetch(`/advise/${adviseId}`);
+  const {data, loading, error} = useFetch(`https://realstate-api-glm4.onrender.com/api/advise/${adviseId}`);
  
   const navigate = useNavigate();
   
@@ -32,7 +32,7 @@ const EditAdvise = () => {
         ...info,
       };
 
-      await axios.put(`/advise/${adviseId}`, newUser);
+      await axios.put(`https://realstate-api-glm4.onrender.com/api/advise/${adviseId}`, newUser);
 
       alert('Sửa thành công!');
       // Quay lại trang trước

@@ -20,7 +20,7 @@ const NewLandSaleCategory = () => {
         ...info
       };
 
-      await axios.post("/landSaleCategory/", newCategory);
+      await axios.post("https://realstate-api-glm4.onrender.com/api/landSaleCategory/", newCategory);
 
       alert('Thêm thành công!');
       // Quay lại trang trước

@@ -12,13 +12,13 @@ const JobAndAdvise = ({ type }) => {
       let url;
       switch (type) {
         case "job":
-          url = '/job';
+          url = 'https://realstate-api-glm4.onrender.com/api/job';
           break;
         case "jobApply":
-          url = '/jobApply';
+          url = 'https://realstate-api-glm4.onrender.com/api/jobApply';
           break;
         case "advise":
-          url = '/advise';
+          url = 'https://realstate-api-glm4.onrender.com/api/advise';
           break;
         default:
           break;

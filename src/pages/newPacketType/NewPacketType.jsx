@@ -20,7 +20,7 @@ const NewPacketType = () => {
         ...info
       };
 
-      await axios.post("/packetType/", newCategory);
+      await axios.post("https://realstate-api-glm4.onrender.com/api/packetType/", newCategory);
 
       alert('Thêm thành công!');
       // Quay lại trang trước

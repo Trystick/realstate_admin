@@ -13,7 +13,7 @@ const EditPostCategory = () => {
   const ref = useRef(null);
   const [info, setInfo] = useState({})
   const {postCategoryId} = useParams();
-  const {data, loading, error} = useFetch(`/postCategory/${postCategoryId}`);
+  const {data, loading, error} = useFetch(`https://realstate-api-glm4.onrender.com/api/postCategory/${postCategoryId}`);
  
   const navigate = useNavigate();
 
@@ -30,7 +30,7 @@ const EditPostCategory = () => {
         ...info,
       };
 
-      await axios.put(`/postCategory/${postCategoryId}`, editPostCategory);
+      await axios.put(`https://realstate-api-glm4.onrender.com/api/postCategory/${postCategoryId}`, editPostCategory);
 
       alert('Sửa thành công!');
       // Quay lại trang trước

@@ -27,7 +27,7 @@ const Slide = () => {
       const newSlide = {
         photos: list,
       };
-       await axios.post(`/slide`, newSlide);
+       await axios.post(`https://realstate-api-glm4.onrender.com/api/slide`, newSlide);
       
        alert('Thêm thành công!');
       // Quay lại trang trước

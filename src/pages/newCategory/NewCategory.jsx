@@ -21,7 +21,7 @@ const NewCategory = () => {
         ...info
       };
 
-      await axios.post("/category/", newCategory);
+      await axios.post("https://realstate-api-glm4.onrender.com/api/category", newCategory);
 
       alert('Thêm thành công!');
       // Quay lại trang trước

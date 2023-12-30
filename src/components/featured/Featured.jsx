@@ -14,9 +14,9 @@ const Featured = () => {
     const target = 1000000;
 
     Promise.all([
-        fetch('/order/today').then(response => response.json()),
-        fetch('/order/last-week').then(response => response.json()),
-        fetch('/order/last-month').then(response => response.json())
+        fetch('https://realstate-api-glm4.onrender.com/api/order/today').then(response => response.json()),
+        fetch('https://realstate-api-glm4.onrender.com/api/order/last-week').then(response => response.json()),
+        fetch('https://realstate-api-glm4.onrender.com/api/order/last-month').then(response => response.json())
     ]).then(([todayData, lastWeekData, lastMonthData]) => {
         const amount = todayData.totalToday;
         let percentage = 0;

@@ -14,7 +14,7 @@ const EditAdmin = () => {
   const [file, setFile] = useState("");
   const [info, setInfo] = useState({})
   const {adminId} = useParams();
-  const {data, loading, error} = useFetch(`/users/${adminId}`);
+  const {data, loading, error} = useFetch(`https://realstate-api-glm4.onrender.com/api/users/${adminId}`);
 
 
   const navigate = useNavigate();
@@ -40,7 +40,7 @@ const EditAdmin = () => {
         img: url,
       };
 
-      await axios.put(`/users/${adminId}`, newUser);
+      await axios.put(`https://realstate-api-glm4.onrender.com/api/users/${adminId}`, newUser);
 
       alert('Sửa thành công!');
       // Quay lại trang trước
@@ -56,7 +56,7 @@ const EditAdmin = () => {
   useEffect(() => {
     const fetchRoles = async () => {
       try {
-        const response = await axios.get('/role');
+        const response = await axios.get('https://realstate-api-glm4.onrender.com/api/role');
         setRoles(response.data);
       } catch (error) {
         console.error('Failed to fetch roles:', error);

@@ -31,7 +31,7 @@ const NewJobApply = () => {
         file: url,
       };
 
-      await axios.post("/jobApply", newJobApply);
+      await axios.post("https://realstate-api-glm4.onrender.com/api/jobApply", newJobApply);
 
       alert('Thêm thành công!');
       // Quay lại trang trước

@@ -12,7 +12,7 @@ const List = () => {
   const [rows, setRows] = useState([]);
 
   useEffect(() => {
-    fetch('/order/newest')
+    fetch('https://realstate-api-glm4.onrender.com/api/order/newest')
       .then(response => response.json())
       .then(async orders => {
         const updatedOrders = await Promise.all(orders.map(async order => {

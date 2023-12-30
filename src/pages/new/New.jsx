@@ -13,7 +13,7 @@ const New = ({ inputs, title }) => {
   const navigate = useNavigate();
   const [jobCategoryId, setJobCategoryId] = useState(undefined);
   const [selectedRole, setSelectedRole] = useState({});
-  const {data, loading, error} = useFetch("/packet")
+  const {data, loading, error} = useFetch("https://realstate-api-glm4.onrender.com/api/packet")
 
 
   const handleChange = (e) => {
@@ -41,7 +41,7 @@ const New = ({ inputs, title }) => {
         img: url,
       };
 
-      await axios.post("/auth/register/", newUser);
+      await axios.post("https://realstate-api-glm4.onrender.com/api/auth/register/", newUser);
 
       alert('Thêm thành công!');
       // Quay lại trang trước

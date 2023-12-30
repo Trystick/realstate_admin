@@ -14,7 +14,7 @@ const Chart = ({ aspect }) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch('/order/total-successful-orders')
+    fetch('https://realstate-api-glm4.onrender.com/api/order/total-successful-orders')
       .then(response => response.json())
       .then(data => setData(data))
       .catch(error => console.error(error));

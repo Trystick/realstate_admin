@@ -12,7 +12,7 @@ const EditRole = () => {
   const ref = useRef(null);
   const [info, setInfo] = useState({})
   const {roleId} = useParams();
-  const {data, loading, error} = useFetch(`/role/${roleId}`);
+  const {data, loading, error} = useFetch(`https://realstate-api-glm4.onrender.com/api/role/${roleId}`);
  
   const navigate = useNavigate();
 
@@ -29,7 +29,7 @@ const EditRole = () => {
         ...info,
       };
 
-      await axios.put(`/role/${roleId}`, newUser);
+      await axios.put(`https://realstate-api-glm4.onrender.com/api/role/${roleId}`, newUser);
 
       alert('Sửa thành công!');
       // Quay lại trang trước

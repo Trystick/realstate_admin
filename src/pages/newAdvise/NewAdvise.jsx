@@ -31,7 +31,7 @@ const NewAdvise = () => {
         // img: url,
       };
 
-      await axios.post("/advise", newAdvise);
+      await axios.post("https://realstate-api-glm4.onrender.com/api/advise", newAdvise);
 
       alert('Thêm thành công!');
       // Quay lại trang trước

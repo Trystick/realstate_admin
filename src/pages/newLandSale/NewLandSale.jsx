@@ -13,7 +13,7 @@ const NewLandSale = () => {
   const [info, setInfo] = useState({});
   const [categoryLandSaleId, setLandSaleCategoryId] = useState(undefined);
   const navigate = useNavigate();
-  const {data, loading, error} = useFetch("/landSaleCategory")
+  const {data, loading, error} = useFetch("https://realstate-api-glm4.onrender.com/api/landSaleCategory")
   
   const handleChange = (e) => {
     setInfo((prev) => ({...prev, [e.target.id]: e.target.value}));
@@ -33,7 +33,7 @@ const NewLandSale = () => {
     const user = JSON.parse(userJson);
     if (user && user._id) {
         const userId = user._id;
-        axios.get(`/users/${userId}`, {withCredentials: true})
+        axios.get(`https://realstate-api-glm4.onrender.com/api/users/${userId}`, {withCredentials: true})
         .then(response => {
             setUserLocal(response.data);
             localStorage.setItem('userId', response.data._id);
@@ -62,7 +62,7 @@ const NewLandSale = () => {
         userId: userLocal._id,
         photos: list,
       };
-       await axios.post(`/landSale/${categoryLandSaleId}`, newProject);
+       await axios.post(`https://realstate-api-glm4.onrender.com/api/landSale/${categoryLandSaleId}`, newProject);
       
        alert('Thêm thành công!');
       // Quay lại trang trước

@@ -13,7 +13,7 @@ const EditLandSaleCategory = () => {
   const ref = useRef(null);
   const [info, setInfo] = useState({})
   const {landSaleCategoryId} = useParams();
-  const {data, loading, error} = useFetch(`/landSaleCategory/${landSaleCategoryId}`);
+  const {data, loading, error} = useFetch(`https://realstate-api-glm4.onrender.com/api/landSaleCategory/${landSaleCategoryId}`);
  
   const navigate = useNavigate();
   
@@ -32,7 +32,7 @@ const EditLandSaleCategory = () => {
         ...info,
       };
 
-      await axios.put(`/landSaleCategory/${landSaleCategoryId}`, newUser);
+      await axios.put(`https://realstate-api-glm4.onrender.com/api/landSaleCategory/${landSaleCategoryId}`, newUser);
 
       alert('Sửa thành công!');
       // Quay lại trang trước

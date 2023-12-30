@@ -16,7 +16,7 @@ const NewAdmin = () => {
   const [jobCategoryId, setJobCategoryId] = useState(undefined);
   const [selectedRole, setSelectedRole] = useState({});
 
-  const {data, loading, error} = useFetch("/role")
+  const {data, loading, error} = useFetch("https://realstate-api-glm4.onrender.com/api/role")
 
   const handleChange = (e) => {
     setInfo((prev) => ({...prev, [e.target.id]: e.target.value}));
@@ -44,7 +44,7 @@ const NewAdmin = () => {
         img: url,
       };
 
-      await axios.post("/auth/register/", newUser);
+      await axios.post("https://realstate-api-glm4.onrender.com/api/auth/register", newUser);
 
       alert('Thêm thành công!');
       // Quay lại trang trước
