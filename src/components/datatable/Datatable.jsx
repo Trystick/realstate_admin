@@ -113,6 +113,32 @@ const Datatable = ({columns}) => {
       alert('Có lỗi xảy ra khi đăng bình luận');
     }
   };
+
+  const handleApproveLandSale = async (id) => {
+    try {
+      const response = await axios.post(`/landSale/approve/${id}`);
+      if (response.status === 200) {
+        alert('Nhà bán đã được đăng thành công');
+        setActionStatus('success');
+      }
+    } catch (error) {
+      console.error('Error approving landsale', error);
+      alert('Có lỗi xảy ra khi đăng bài nhà bán');
+    }
+  };
+
+  const handleApproveLandLease = async (id) => {
+    try {
+      const response = await axios.post(`/landLease/approve/${id}`);
+      if (response.status === 200) {
+        alert('Nhà thuê đã được đăng thành công');
+        setActionStatus('success');
+      }
+    } catch (error) {
+      console.error('Error approving landlease', error);
+      alert('Có lỗi xảy ra khi đăng bài nhà thuê');
+    }
+  };
   
 
   const actionColumn = [
