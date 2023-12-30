@@ -129,7 +129,43 @@ const Datatable = ({columns}) => {
               </Link>
             </div>
           );
-        } else {
+        } else if (path === 'landSale'){
+          return (
+          <div className="cellAction">
+              <Link to={`/${path}/edit/${params.row._id}`} style={{ textDecoration: "none" }}>
+                <div className="viewButton">Sửa</div>
+              </Link>
+              <Link style={{ textDecoration: "none" }}>
+                <div className="assignButton" onClick={() => handleApproveLandSale(params.row._id)}>Đăng</div>
+              </Link>
+              <div
+                className="deleteButton"
+                onClick={() => handleDelete(params.row._id, params.row.categoryId, params.row.postCategoryId, params.row.jobCategoryId, params.row.categoryLandSaleId, params.row.categoryLandLeaseId, params.row.packetTypeId)}
+              >
+                Xóa
+              </div>
+            </div>
+          )
+        }
+        else if (path === 'landLease'){
+          return (
+          <div className="cellAction">
+              <Link to={`/${path}/edit/${params.row._id}`} style={{ textDecoration: "none" }}>
+                <div className="viewButton">Sửa</div>
+              </Link>
+              <Link style={{ textDecoration: "none" }}>
+                <div className="assignButton" onClick={() => handleApproveLandLease(params.row._id)}>Đăng</div>
+              </Link>
+              <div
+                className="deleteButton"
+                onClick={() => handleDelete(params.row._id, params.row.categoryId, params.row.postCategoryId, params.row.jobCategoryId, params.row.categoryLandSaleId, params.row.categoryLandLeaseId, params.row.packetTypeId)}
+              >
+                Xóa
+              </div>
+            </div>
+          )
+        }
+        else {
           return (
             <div className="cellAction">
               <Link to={`/${path}/edit/${params.row._id}`} style={{ textDecoration: "none" }}>

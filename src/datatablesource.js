@@ -517,6 +517,12 @@ export const landSaleColumns = [
     headerName: "Số nhà vệ sinh",
     width: 100,
   },
+  {
+    field: "isApproved",
+    headerName: "Trạng thái",
+    width: 120,
+    valueFormatter: (params) => params.value ? 'Đã đăng' : 'Chưa đăng',
+  }  
 ];
 
 export const categoryLandLeaseColumns = [
@@ -624,6 +630,12 @@ export const landLeaseColumns = [
     headerName: "Số nhà vệ sinh",
     width: 100,
   },
+  {
+    field: "isApproved",
+    headerName: "Trạng thái",
+    width: 120,
+    valueFormatter: (params) => params.value ? 'Đã đăng' : 'Chưa đăng',
+  }  
 ];
 
 export const postCategoryColumns = [
